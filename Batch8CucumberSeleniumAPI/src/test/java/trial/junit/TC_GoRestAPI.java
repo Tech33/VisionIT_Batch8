@@ -31,7 +31,7 @@ public class TC_GoRestAPI {
 
 		System.out.println(resp.toString());
 		
-	}
+	}//
 
 	@Test
 	public void t_02_negative_get_request_invalid_token() {

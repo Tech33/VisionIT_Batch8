@@ -133,7 +133,7 @@ public class TC_GetRequest {
 		
 		System.out.println("Response Returned as: " + resp.asString());
 
-	}
+	}//
 	
 	@Test
 	public void t_06_get_all_users_with_gender_as_female_and_status_as_active() {
