@@ -98,7 +98,7 @@ public class TC_GetRequest {
 				.body("result.status", equalTo(404))
 				.extract()
 				.response();
-		System.out.println("Response Returned as: " + resp.asString());
+		System.out.println("Response Returned as to: " + resp.asString());
 	}
 	
 	@Test
@@ -131,7 +131,7 @@ public class TC_GetRequest {
 		}
 		*/
 		
-		System.out.println("Response Returned as: " + resp.asString());
+		System.out.println("Response Returned as to: " + resp.asString());
 
 	}
 	

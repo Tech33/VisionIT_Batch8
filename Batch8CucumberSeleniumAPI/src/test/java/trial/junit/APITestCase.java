@@ -81,7 +81,7 @@ public class APITestCase {
 		HashMap<String,String> hm_header = new HashMap<String,String>();
 		hm_header.put("Content-Type", "application/json");
 		
-		System.out.println("Header " + hm_header.toString());
+		System.out.println("Header is " + hm_header.toString());
 		
 		//Req Specification with Base URI and Header 
 		RequestSpecification req_spec = given().baseUri(server_name).headers(hm_header);
