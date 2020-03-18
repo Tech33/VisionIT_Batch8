@@ -56,7 +56,7 @@ Response resp = given().baseUri("https://gorest.co.in/")
 		.when()
 		.get("/public-api/users")
 		.then().assertThat().body("result.gender", everyItem(equalTo("female"))).extract().response();
-		
+		json
 		List<String> result = resp.jsonPath().getList("result.first_name");
 
 		
