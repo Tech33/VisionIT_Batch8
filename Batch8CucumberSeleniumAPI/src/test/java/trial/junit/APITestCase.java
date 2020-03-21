@@ -48,7 +48,7 @@ public class APITestCase {
 	@Test
 	public void t_03_get_request_get_single_employee_detail() {
 		RequestSpecification req_spec = given().baseUri(server_name);
-		Response response = req_spec.when().get("/api/v1/employee/1");
+		Response response = req_spec.when().get("/api/v1/employees/1");
 		ValidatableResponse valid_response = response.then();
 		valid_response.assertThat().statusCode(200).
 		assertThat().body("status",equalTo("success")).
