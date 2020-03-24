@@ -2,18 +2,13 @@ package trial.junit.api.gorest;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-
-import java.util.List;
-
-import org.junit.Assert;
 import org.junit.Test;
-
 import io.restassured.response.Response;
 
-public class TC_GetRequest {
+public class TC_GetRequest extends TestBase {
 
-	String server = "https://gorest.co.in/";
-	String accessToken = "HTnPGhobc6TwQ9ManvI5zKZu9Hg7wGHzceNq";
+	String server = LoadProperties().getProperty("url");
+	String accessToken = LoadProperties().getProperty("token");
 	
 	@Test
 	public void t_01_get_request_fetch_all_users() {
@@ -139,11 +134,11 @@ public class TC_GetRequest {
 	public void t_06_get_all_users_with_gender_as_female_and_status_as_active() {
 		Response resp = given()
 				.baseUri(server)
-				.queryParam("gender", "female")
-				.queryParam("status", "active")
+				//.queryParam("gender", "female")
+				//.queryParam("status", "active")
 				.auth().oauth2(accessToken)
 				.when()
-				.get("public-api/users" )
+				.get("/public-api/users?gender=female&status=active" )
 				.then()
 				.assertThat()
 				.statusCode(200)
